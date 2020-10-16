@@ -25,6 +25,8 @@ public class Variables {
 		 * 
 		 * */
 		
+		
+		
 		// las variables en java se declaran: TIPO nombre = valor;
 		String nombre = "Ander";
 		int edad = 99;

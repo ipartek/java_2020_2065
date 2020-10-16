@@ -46,16 +46,19 @@ public class Ejercicio2 {
 		
 		int temperaturaSemana [] = {10, 16, 19,20, 23, 21, 20};
 		String diasSemana [] = {"Lunes", "Martes", "Miercoles","Jueves", "Viernes", "Sabado", "Domingo"};
-		float mediaSemana = 0;
+		float sumatorioSemana = 0;
 		
 		for (int i = 0; i < temperaturaSemana.length; i++) {
 			
-			System.out.println( diasSemana[i] + " hace " + temperaturaSemana[i] + " grados");
-			mediaSemana += temperaturaSemana[i]; // mediaSemana = mediaSemana + mediaSemana se abrevia +=
+			// System.out.println( diasSemana[i] + " hace " + temperaturaSemana[i] + " grados");
+			System.out.printf("%s hace %s grados \n", diasSemana[i], temperaturaSemana[i]);
+			sumatorioSemana += temperaturaSemana[i]; // mediaSemana = mediaSemana + mediaSemana se abrevia +=
 			
 		}// for
 		
-		System.out.println("Media de la semana es: " + (mediaSemana/temperaturaSemana.length) );
+		
+		double mediaSemana =  sumatorioSemana / temperaturaSemana.length; 
+		System.out.printf("Media de la semana es %.2f ", mediaSemana );
 		
 
 	}
