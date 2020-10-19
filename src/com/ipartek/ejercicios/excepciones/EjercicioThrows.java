@@ -32,6 +32,6 @@ public class EjercicioThrows {
 		
 
 		sc.close();
-	}
+	}// main
 
 }
