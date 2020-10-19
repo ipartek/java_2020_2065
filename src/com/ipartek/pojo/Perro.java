@@ -9,6 +9,7 @@ public class Perro {
 	private String raza;
 	private float peso;
 	private boolean isVacunado;
+	private String historia;
 	
 	// Constructor
 	///////////////////////////////////////
