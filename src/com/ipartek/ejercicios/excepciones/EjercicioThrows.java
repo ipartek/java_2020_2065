@@ -27,7 +27,7 @@ public class EjercicioThrows {
 			System.out.println("Tu DNI copleto es: " + dniCompleto);
 			
 		}catch (Exception e) {
-			System.out.println(" Lo sentimos pero tu dni no es valido " + dniNumeros);
+			System.out.println("Excepcion: " + e.getMessage() );
 		}	
 		
 
