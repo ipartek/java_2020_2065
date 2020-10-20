@@ -86,9 +86,11 @@ public class Perro {
 	public void setHistoria(String historia) {
 		this.historia = historia;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Perro [nombre=" + nombre + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado
+				+ ", historia=" + historia + "]";
+	}
 	
 }
