@@ -93,4 +93,6 @@ public class Perro {
 				+ ", historia=" + historia + "]";
 	}
 	
+	// Otros metodos
+	
 }

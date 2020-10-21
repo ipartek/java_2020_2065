@@ -1,5 +1,7 @@
 package com.ipartek.ejercicios.estructurasCondicionales;
 
+import com.ipartek.apps.AppPerrera;
+
 /**
  * 
  * Realizar un programa que realice la siguiente funcionalidad.<br> 
@@ -18,9 +20,12 @@ package com.ipartek.ejercicios.estructurasCondicionales;
  *
  */
 public class Ejercicio1 {
+	
+	
 
 	public static void main(String[] args) {
-
+		
+	
 		int a = 6;
 		int b = 8;
 		int c = 0;

@@ -12,18 +12,23 @@ import java.util.Scanner;
  *
  */
 public class Ejercicio2 {
-
+		
 	public static void main(String[] args) {
 
-		int num1 = 0;
+	
+		int iNum1 = 0;	
+		
+		
 		Scanner sc = new Scanner(System.in);
 		
 		// Procedemos a capturar los valores.
 		System.out.print("Ingrese un numero entre 0 y 50: ");
-		num1 = Integer.parseInt(sc.nextLine());
+		
+		
+		iNum1 = Integer.parseInt(sc.nextLine());
 
-		if (num1 > 50 || num1 < 0) {
-			System.out.println("el numero introducido no es valido! el numero es: " + num1);
+		if (iNum1 > 50 || iNum1 < 0) {
+			System.out.println("el numero introducido no es valido! el numero es: " + iNum1);
 		}
 		
 		sc.close();
