@@ -9,33 +9,45 @@ public class AppPerrera {
 
 	// variables globales para esta Clase
 	static Scanner sc = null;
-	static ArrayList<Perro> lista = new ArrayList<Perro>();
+	static ArrayList<Perro> lista = new ArrayList<Perro>();	
 	static String opcion = "";   // opcion seleccionada en el menu por el usuario
+	
+	//opciones del menu
+	static final String OP_LISTAR    = "1";
+	static final String OP_CREAR     = "2";
+	static final String OP_ELIMINAR  = "3";
+	static final String OP_SALIR     = "s";
 	
 	public static void main(String[] args) {
 		
 		
-		System.out.println("***********  APP  PERRERA   **************");
+		System.out.println("***********  APP  PERRERA   **************");		
 		sc = new Scanner(System.in);
 
 		incializarDatos();
 		
-		pintarMenu();
+		do {
 		
-		//TODO cambiar "1","2","3" etc  por constantes
-		switch (opcion) {
-		case "1":
-			listar();
-			break;
-		case "2":
-			// TODO resto de opciones
-			System.out.println("Sin Terminar");
-			break;	
+			pintarMenu();
+			
+			
+			switch (opcion) {
+			case OP_LISTAR:
+				listar();
+				break;
+			case OP_CREAR:
+				// TODO resto de opciones
+				System.out.println("Sin Terminar");
+				break;	
+				
+			
+			default:
+				System.out.println(" ** por favor selecciona una opción valida ** ");
+				break;
+			}
 
-		default:
-			break;
-		}
-		 
+			
+		} while ( !OP_SALIR.equalsIgnoreCase(opcion) );
 		
 		System.out.println("***********  ADIOS, nos vemos pronto   **************");
 		sc.close();
@@ -45,9 +57,9 @@ public class AppPerrera {
 
 	private static void listar() {
 		
-		for (Perro perro : lista) {
-			//TODO dar formato para mostrar solo nombre y raza
-			System.out.println(perro);
+		//TODO ver como dar una fixed lenght al String para nombre
+		for (Perro perro : lista) {			
+			System.out.println( String.format("%15s [%s]  %s Kg", perro.getNombre(), perro.getRaza(), perro.getPeso()  ));
 		}
 		
 	}
@@ -75,12 +87,12 @@ public class AppPerrera {
 	private static void pintarMenu() {
 	
 		System.out.println("************************************");
-		System.out.println(" 1.- Listar todos los perros");
-		System.out.println(" 2.- Crear un perro");
-		System.out.println(" 3.- Dar de baja un Perro");
+		System.out.println(" " + OP_LISTAR + ".- Listar todos los perros");
+		System.out.println(" " + OP_CREAR + ".- Crear un perro");
+		System.out.println(" " + OP_ELIMINAR + ".- Dar de baja un Perro");
 		System.out.println(" etc etc ...");
 		System.out.println(" ");
-		System.out.println(" S - Salir");
+		System.out.println(" " + OP_SALIR + " - Salir");
 		System.out.println("************************************");
 		
 		System.out.println("\n Selecciona una opcion del menu:");

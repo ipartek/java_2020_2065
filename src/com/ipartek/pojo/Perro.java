@@ -1,7 +1,7 @@
 package com.ipartek.pojo;
 
 public class Perro {
-
+	
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
 	///////////////////////////////////////
