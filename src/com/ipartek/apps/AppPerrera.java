@@ -22,6 +22,7 @@ public class AppPerrera {
 
 		System.out.println("***********  APP  PERRERA   **************");
 		sc = new Scanner(System.in);
+		boolean salir = false;
 
 		incializarDatos();
 
@@ -38,14 +39,19 @@ public class AppPerrera {
 				System.out.println("Sin Terminar");
 				break;
 
+			case OP_SALIR:
+				salir = true;
+				System.out.println("***********  ADIOS, nos vemos pronto   **************");
+				break;
+				
 			default:
 				System.out.println(" ** por favor selecciona una opción valida ** ");
 				break;
 			}
 
-		} while (!OP_SALIR.equalsIgnoreCase(opcion));
+		} while ( !salir );
 
-		System.out.println("***********  ADIOS, nos vemos pronto   **************");
+		
 		sc.close();
 
 	}// main
