@@ -5,6 +5,7 @@ public class Perro {
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
 	///////////////////////////////////////
+	private int id;  //TODO getter setreers y contructor toString
 	private String nombre;
 	private String raza;
 	private float peso;

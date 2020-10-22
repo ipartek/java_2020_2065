@@ -3,13 +3,14 @@ package com.ipartek.apps;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.ipartek.modelo.PerroDAOArrayList;
 import com.ipartek.pojo.Perro;
 
 public class AppPerrera {
 
 	// variables globales para esta Clase
 	static private Scanner sc = null;
-	static private ArrayList<Perro> lista = new ArrayList<Perro>();
+	static private PerroDAOArrayList modelo = new PerroDAOArrayList();
 	static private String opcion = ""; // opcion seleccionada en el menu por el usuario
 
 	// opciones del menu
@@ -23,8 +24,6 @@ public class AppPerrera {
 		System.out.println("***********  APP  PERRERA   **************");
 		sc = new Scanner(System.in);
 		boolean salir = false;
-
-		incializarDatos();
 
 		do {
 
@@ -59,24 +58,13 @@ public class AppPerrera {
 	private static void listar() {
 		
 		// TODO ver como dar una fixed lenght al String para nombre
-		for (Perro perro : lista) {
+		ArrayList<Perro> perros = modelo.listar();
+		for (Perro perro : perros) {
 			System.out.println(String.format("%15s [%s]  %s Kg", perro.getNombre(), perro.getRaza(), perro.getPeso()));
 		}
 
 	}
 
-	/**
-	 * Inicializar el ArrayList para simular que existen perros.<br>
-	 * En un futuro nos conectaremos a una bbdd
-	 */
-	private static void incializarDatos() {
-
-		lista.add(new Perro("Bubba"));
-		lista.add(new Perro("Laika"));
-		lista.add(new Perro("Rintintin"));
-		lista.add(new Perro("goffy"));
-
-	}
 
 	/**
 	 * Se encraga de pintar las pociones del menu.<br>
