@@ -1,6 +1,8 @@
 package com.ipartek;
 
-public class Utilidades {
+import com.ipartek.pojo.Serie;
+
+public class Utilidades implements IFunciones{
 	
 	 static final char LETRAS_DNI[] = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V',
 			    'H', 'L', 'C', 'K', 'E' };
@@ -32,6 +34,30 @@ public class Utilidades {
 		}	
 		
 		return numeros + letra;
+	}
+
+	@Override
+	public String pedirNombre() throws Exception {
+		
+		return "pedir nombre ya lo hare....";
+	}
+
+	@Override
+	public void imprimirNumeroLoteria(int tipoLoteria) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public float calcularVueltas(float dineroEntregado, float precioProducto) throws Exception {
+		
+		return 0;
+	}
+
+	@Override
+	public Serie pedirDatosPorConsola() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
