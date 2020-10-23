@@ -1,5 +1,7 @@
 package com.ipartek;
 
+import java.util.Scanner;
+
 import com.ipartek.pojo.Serie;
 
 public class Utilidades implements IFunciones{
@@ -38,20 +40,55 @@ public class Utilidades implements IFunciones{
 
 	@Override
 	public String pedirNombre() throws Exception {
+		String resul = "";
 		
-		return "pedir nombre ya lo hare....";
+		Scanner sc = new Scanner(System.in);		
+		System.out.println("Dime tu nombre:");
+		resul = sc.nextLine();
+		sc.close();
+		
+		if ( resul.length() <= 1 ) {
+			throw new Exception("El nombre es muy corto");
+		}
+		
+		for (int i = 0; i < resul.length(); i++) {
+			char letra = resul.charAt(i);
+			boolean isNumber = Character.isDigit(letra);
+			if ( isNumber ) {
+				throw new Exception("El nombre no puede contener numeros");
+			}
+		}
+		
+		return resul;
 	}
 
 	@Override
 	public void imprimirNumeroLoteria(int tipoLoteria) throws Exception {
-		// TODO Auto-generated method stub
+		
+		switch (tipoLoteria) {
+		case LOTERIA_BONOLOTO:
+			System.out.println("01 04 05 16 23 43 15 00");
+			break;
+		case LOTERIA_EUROMILLON:
+			System.out.println("6 - 15 - 37 - 42 Estrellas: 3 - 4");
+			break;	
+		case LOTERIA_QUINIELA:
+			System.out.println("2 - 2 - X - 1 - 1 - 2 - 1 - X - 1 - 1 - 2 - 2 Pleno al 15: X");
+			break;		
+
+		default:
+			throw new Exception("No existe ese tipo de loteria");			
+		}
+		
 		
 	}
 
 	@Override
 	public float calcularVueltas(float dineroEntregado, float precioProducto) throws Exception {
-		
-		return 0;
+		if ( dineroEntregado < precioProducto) {
+			throw new Exception("Dinero insuficiente");	
+		}
+		return  dineroEntregado - precioProducto;
 	}
 
 	@Override
