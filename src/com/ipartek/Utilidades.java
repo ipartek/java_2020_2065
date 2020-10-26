@@ -93,8 +93,23 @@ public class Utilidades implements IFunciones{
 
 	@Override
 	public Serie pedirDatosPorConsola() {
-		// TODO Auto-generated method stub
-		return null;
+		Serie serie = new Serie("");		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Nombre:");
+		serie.setNombre( sc.nextLine() );
+		
+		System.out.println("Duración en minutos:");
+		serie.setDuracion( Integer.parseInt(sc.nextLine()) );
+		
+		System.out.println("Número de temporadas:");
+		serie.setNumTemporadas( Integer.parseInt(sc.nextLine()) );
+		
+		System.out.println("Plataforma en la que esta disponble:");
+		serie.setPlataforma( sc.nextLine() );
+				
+		sc.close();		
+		return serie;
 	}
 
 }
