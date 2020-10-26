@@ -2,6 +2,7 @@ package com.ipartek.ejercicios.herencia;
 
 import com.ipartek.pojo.Estudiante;
 import com.ipartek.pojo.Gato;
+import com.ipartek.pojo.GatoDomestico;
 import com.ipartek.pojo.Persona;
 import com.ipartek.pojo.Profesor;
 
@@ -29,6 +30,10 @@ public class Ejercicio1 {
 
 		Gato gato = new Gato("Garfiled");
 		System.out.println(gato);
+		
+		GatoDomestico gMitxi = new GatoDomestico("Mitxi");
+		System.out.println(gMitxi);
+		
 		
 	}
 
