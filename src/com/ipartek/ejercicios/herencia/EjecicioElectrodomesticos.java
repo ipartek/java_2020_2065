@@ -6,6 +6,15 @@ import com.ipartek.pojo.Electrodomestico;
 import com.ipartek.pojo.Television;
 import com.ipartek.pojo.TelevisionPlana;
 
+/**
+ * Creamos 3 objetos Electrodomestico, Television y TelevisionPlana. <br>
+ * Una vez creados guardarlos en un {@code ArrayList<Electrodomestico>} el cual debeis recorrer con un foreach para: <br>
+ * mostrar uno a uno todos los atributos de cada instancia dentro del Array usando los getters. <br>
+ * usar <b>instanceof</b> para determinar cada objeto a que tipo de clase pertenece. * 
+ * 
+ * @author ur00
+ *
+ */
 public class EjecicioElectrodomesticos {
 
 	public static void main(String[] args) {
