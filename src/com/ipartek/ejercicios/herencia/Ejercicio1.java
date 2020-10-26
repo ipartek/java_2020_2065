@@ -1,6 +1,7 @@
 package com.ipartek.ejercicios.herencia;
 
 import com.ipartek.pojo.Estudiante;
+import com.ipartek.pojo.Gato;
 import com.ipartek.pojo.Persona;
 import com.ipartek.pojo.Profesor;
 
@@ -26,6 +27,9 @@ public class Ejercicio1 {
 		profe.setEdad(88);
 		profe.setAsignatura("Quimica avanzada");
 
+		Gato gato = new Gato("Garfiled");
+		System.out.println(gato);
+		
 	}
 
 }
