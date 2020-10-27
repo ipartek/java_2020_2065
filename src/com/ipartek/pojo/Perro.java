@@ -1,12 +1,12 @@
 package com.ipartek.pojo;
 
-public class Perro {
+
+public class Perro extends Mamifero {
 	
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
 	///////////////////////////////////////
-	private int id;  //TODO getter setreers y contructor toString
-	private String nombre;
+	private int id;	
 	private String raza;
 	private float peso;
 	private boolean isVacunado;
@@ -15,8 +15,8 @@ public class Perro {
 	// Constructores
 	///////////////////////////////////////
 	public Perro() {
-		super();
-		this.nombre = "Sin nombre";
+		super("Sin nombre");	
+		this.id = 0;
 		this.raza = "Cruce";
 		this.peso = 0f;
 		this.isVacunado = false;
@@ -26,13 +26,16 @@ public class Perro {
 	// otro constructor sobrecargado
 	
 	public Perro(String nombre) {
-		this(); // llama al constructor por defecto, pulsar Control + click
-		this.nombre = nombre;
+		super(nombre);
+		this.id = 0;
+		this.raza = "Cruce";
+		this.peso = 0f;
+		this.isVacunado = false;
+		this.historia = "Erase una vez....";		
 	}
 	
 	public Perro(String nombre, String raza, float peso) {
-		this();  // Cuidado no poner super
-		this.nombre = nombre;
+		this(nombre);
 		this.raza = raza;
 		this.peso = peso;
 	}
@@ -40,17 +43,6 @@ public class Perro {
 	
 	//Getters y setters
 	///////////////////////////////////////
-	
-
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
 	public String getRaza() {
 		return raza;
@@ -88,11 +80,21 @@ public class Perro {
 		this.historia = historia;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Perro [nombre=" + nombre + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado
-				+ ", historia=" + historia + "]";
+		return "Perro [id=" + id + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado + ", historia="
+				+ historia + ", getNombre()=" + getNombre() + ", getPatas()=" + getPatas() + "]";
 	}
+
+	
 	
 	// Otros metodos
 	

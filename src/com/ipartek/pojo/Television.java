@@ -3,7 +3,7 @@ package com.ipartek.pojo;
 public class Television extends Electrodomestico {
 
 	private int pulgadas;
-
+	
 	public Television() {
 		super();		
 	}
