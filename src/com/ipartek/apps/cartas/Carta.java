@@ -3,9 +3,9 @@ package com.ipartek.apps.cartas;
 public class Carta {
 
 	private Palo palo;	
-	private int numero;
+	private Numero numero;
 	
-	public Carta(Palo palo, int numero) {
+	public Carta(Palo palo, Numero numero) {
 		super();
 		this.palo = palo;
 		this.numero = numero;
@@ -19,11 +19,11 @@ public class Carta {
 		this.palo = palo;
 	}
 
-	public int getNumero() {
+	public Numero getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(Numero numero) {
 		this.numero = numero;
 	}
 
@@ -31,5 +31,6 @@ public class Carta {
 	public String toString() {
 		return "Carta [palo=" + palo + ", numero=" + numero + "]";
 	}
+
 	
 }
