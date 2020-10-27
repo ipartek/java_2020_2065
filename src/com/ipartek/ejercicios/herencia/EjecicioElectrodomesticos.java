@@ -47,23 +47,28 @@ public class EjecicioElectrodomesticos {
 		
 		for ( Electrodomestico elec : lista) {
 			
-			
-			// TODO en vez de usar syso, castear y mostrar datos con getters
+			// En vez de usar syso, castear y mostrar datos con getters
 			// System.out.println(elec.toString());
-			if ( elec instanceof Television ) {
-				
-				// podemos castear usando (Television) y asi nos permite acceder a los metodos de esa clase
-				((Television)elec).getPulgadas();
-				
+			
+			// CUIDADO con la Exception, hay que preguntar siempre con instanceof, descomentar la linea de abajo y probar
+			// TelevisionPlana ttt = (TelevisionPlana)elec1;
+										
+			System.out.printf("Nombre: %s \n", elec.getNombre());
+			System.out.printf("Precio: %s \n", elec.getPrecio());				
+			
+						
+			if ( elec instanceof Television ) {				
+				Television tv = (Television)elec;
+				System.out.printf("Pulgadas: %s \n", tv.getPulgadas());				
 			}
 			
-			if ( elec instanceof TelevisionPlana ) {
-				
-				//tambien podemos castear y asignarlo a una variable nueva
+			if ( elec instanceof TelevisionPlana ) {					
 				TelevisionPlana tvp = (TelevisionPlana)elec;
-				tvp.getTipoPantalla();
-				
+				System.out.printf("Tipo pantalla %s \n" ,tvp.getTipoPantalla() );				
 			}
+			
+			System.out.println("------------------------------------------------------");
+			
 			
 		}// for
 		System.out.println("Salimos");
