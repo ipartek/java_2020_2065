@@ -5,6 +5,11 @@ public class Ejercicio {
 	public static void main(String[] args) {
 
 
+		BarajaNaipes bn = new BarajaNaipes();
+		bn.crear();
+		bn.mostrar();
+		
+		
 		BarajaPoker bp = new BarajaPoker();
 		bp.crear();		
 		bp.mostrar();

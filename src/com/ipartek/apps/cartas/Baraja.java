@@ -29,17 +29,10 @@ public abstract class Baraja {
 	 */
 	void mostrar() {
 		
-		String paloNombre = "";
 		for( Carta c : getMazo() ) {
 			
-			if ( !paloNombre.equals(c.getPalo().getNombre())) {
-				paloNombre = c.getPalo().getNombre();
-				System.out.println("------------------------------------------------");
-				System.out.println(paloNombre);
-				System.out.println("------------------------------------------------");
-			}else {
-				System.out.printf("%s %n", c.getNumero().getNombre());
-			}
+			System.out.printf("%s de %s %n", c.getNumero().getNombre(), c.getPalo().getNombre() );
+			
 		}
 		System.out.println("------------------------------------------------");
 		System.out.printf(" Total %s Cartas en le mazo \n" , getMazo().size());
