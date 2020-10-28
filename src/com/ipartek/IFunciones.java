@@ -24,10 +24,10 @@ import com.ipartek.pojo.Serie;
  *
  */
 public interface IFunciones {
-
-	final int LOTERIA_EUROMILLON = 1;
-	final int LOTERIA_QUINIELA = 2;
-	final int LOTERIA_BONOLOTO = 3;
+	
+	int LOTERIA_EUROMILLON = 1;
+	int LOTERIA_QUINIELA = 2;
+	int LOTERIA_BONOLOTO = 3;
 
 	/**
 	 * pedir nombre por Scanner
