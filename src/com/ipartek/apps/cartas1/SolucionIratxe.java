@@ -3,8 +3,6 @@ package com.ipartek.apps.cartas1;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.ipartek.apps.cartas1.Carta;
-
 /**
  * Crear una lista que contenga las cuarenta cartas de una baraja. <br>
  * Para crear dicha lista se creara una clase de tipo carta, que tendrá un
@@ -35,13 +33,16 @@ public class SolucionIratxe {
 
 	public static void main(String[] args) {
 		
-		crearBaraja();
-		
+		crearBaraja();		
 		for (Carta carta : listaCartas) {
 			pintarCarta(carta);
 		} 
 		
+				
 		barajear();
+		for (Carta carta : listaCartas) {
+			pintarCarta(carta);
+		} 
 	}
 
 	
@@ -74,16 +75,15 @@ public class SolucionIratxe {
 		System.out.printf("%s de %s\n", nombreCarta, carta.getPalo());
 	}
 	
-	//TODO que haga random bien sin repetir cartas
+	
 	private static void barajear() {
 		
 		System.out.printf("\n*********BARAJAMOS***********\n");
 		Random rnd = new Random();
-		for (Carta carta : listaCartas) {
-			
-			int azar = rnd.nextInt(listaCartas.size());
-			carta = listaCartas.get(azar);
-			pintarCarta(carta);
+		for (int i = 0; i < listaCartas.size(); i++) {
+			int azar = rnd.nextInt(listaCartas.size());			
+			Carta c = listaCartas.remove(azar);
+			listaCartas.add(c);
 		}
 		
 	}
