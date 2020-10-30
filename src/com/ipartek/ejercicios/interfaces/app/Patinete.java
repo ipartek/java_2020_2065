@@ -1,6 +1,6 @@
 package com.ipartek.ejercicios.interfaces.app;
 
-public class Patinete implements IVehiculo {
+public class Patinete implements IVehiculo, AutoCloseable {
 
 	// Atributos, deben ser siempre privados
 	private int velocidadActual;
@@ -77,6 +77,13 @@ public class Patinete implements IVehiculo {
 		}else {
 			this.estaArrancado = false;
 		}		
+	}
+
+	@Override
+	public void close() throws Exception {
+		System.out.println("Cerramos el patinete");
+		apagar();
+		
 	}
 
 
