@@ -3,7 +3,6 @@ package com.ipartek.apps;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.ipartek.modelo.PerroDAOArrayList;
 import com.ipartek.modelo.PerroDAOSqlite;
 import com.ipartek.modelo.PerroDao;
 import com.ipartek.pojo.Perro;
@@ -168,10 +167,9 @@ public class AppPerrera {
 
 	private static void listar() {
 
-		// TODO ver como dar una fixed lenght al String para nombre
 		ArrayList<Perro> perros = modelo.listar();
 		for (Perro perro : perros) {
-			System.out.println(String.format("%s %15s [%s]  %4s Kg  %13s %s", perro.getId(), perro.getNombre(), perro.getRaza(),
+			System.out.println(String.format("%3s %-15s %-15s  %4s Kg  %13s %s", perro.getId(), perro.getNombre(), perro.getRaza(),
 					perro.getPeso(), (perro.isVacunado()) ? "vacunado" : "*Sin Vacunar*", perro.getHistoria()));
 		}
 
