@@ -39,6 +39,11 @@ public class AppPerrera {
 				crear();
 				break;
 
+			case OP_ELIMINAR:
+				eliminar();
+				break;
+	
+				
 			case OP_SALIR:
 				salir = true;
 				System.out.println("***********  ADIOS, nos vemos pronto   **************");
@@ -54,6 +59,54 @@ public class AppPerrera {
 		sc.close();
 
 	}// main
+
+	private static void eliminar() {
+		
+		boolean flag = true;
+		int id = 0;
+		Perro pEliminar = null;
+		
+		// buscar perro por id
+		do {
+			System.out.println("Dime el ID del perro para eliminar:");
+			id = Integer.parseInt(sc.nextLine());
+			
+			pEliminar = modelo.recuperar(id);
+			if ( pEliminar == null ) {
+				System.out.println("*Lo sentimos pero no existe ese perro");
+			}else {
+				flag = false;
+			}
+				
+		} while (flag);
+		
+		
+		// pedir confirmacion de nombre para eliminar
+		flag = true;
+		
+		do {
+			System.out.printf("Por favor escribe [%s] para eliminar \n", pEliminar.getNombre() );
+			String nombre = sc.nextLine();
+			
+			if ( pEliminar.getNombre().equalsIgnoreCase(nombre)) {
+				
+				try {
+					modelo.eliminar(id);
+					flag = false;
+					System.out.println("Hemos dado de baja al perro");
+					
+				}catch (Exception e) {
+					e.printStackTrace();
+				}	
+				
+			}else {
+				System.out.println("**No coincide el nombre**");
+			}
+			
+		} while (flag);
+		
+		
+	}
 
 	private static void crear() {
 
@@ -113,7 +166,7 @@ public class AppPerrera {
 		// TODO ver como dar una fixed lenght al String para nombre
 		ArrayList<Perro> perros = modelo.listar();
 		for (Perro perro : perros) {
-			System.out.println(String.format("%15s [%s]  %4s Kg  %13s %s", perro.getNombre(), perro.getRaza(),
+			System.out.println(String.format("%s %15s [%s]  %4s Kg  %13s %s", perro.getId(), perro.getNombre(), perro.getRaza(),
 					perro.getPeso(), (perro.isVacunado()) ? "vacunado" : "*Sin Vacunar*", perro.getHistoria()));
 		}
 
