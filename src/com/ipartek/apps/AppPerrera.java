@@ -81,27 +81,32 @@ public class AppPerrera {
 		} while (flag);
 		
 		
-		// pedir confirmacion de nombre para eliminar
 		flag = true;
-		
+		// pedir confirmacion de nombre para eliminar
 		do {
-			System.out.printf("Por favor escribe [%s] para eliminar \n", pEliminar.getNombre() );
+			System.out.printf("Por favor escribe [%s] para eliminar o \"s\" para [S]alir\n", pEliminar.getNombre() );			
 			String nombre = sc.nextLine();
 			
-			if ( pEliminar.getNombre().equalsIgnoreCase(nombre)) {
+			if ( OP_SALIR.equalsIgnoreCase(nombre)) {
+				break;                                       // salimos del bucle
 				
-				try {
-					modelo.eliminar(id);
-					flag = false;
-					System.out.println("Hemos dado de baja al perro");
+			}else {                                          // comprobar nombre 
+			
+				if ( pEliminar.getNombre().equalsIgnoreCase(nombre)) {
 					
-				}catch (Exception e) {
-					e.printStackTrace();
-				}	
-				
-			}else {
-				System.out.println("**No coincide el nombre**");
-			}
+					try {
+						modelo.eliminar(id);
+						flag = false;
+						System.out.println("Hemos dado de baja al perro");
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+					}	
+					
+				}else {
+					System.out.println("**No coincide el nombre**");
+				}
+			}	
 			
 		} while (flag);
 		
