@@ -26,6 +26,7 @@ public class Perro extends Mamifero implements Comparable<Perro> {
 	}
 	
 	// otro constructor sobrecargado
+
 	
 	public Perro(String nombre) {
 		super(nombre);
@@ -35,6 +36,12 @@ public class Perro extends Mamifero implements Comparable<Perro> {
 		this.isVacunado = false;
 		this.historia = "Erase una vez....";		
 	}
+	
+	public Perro(int id, String nombre) {
+		this(nombre);
+		this.id = id;
+	}
+	
 	
 	public Perro(String nombre, String raza, float peso) {
 		this(nombre);

@@ -3,6 +3,7 @@ package com.ipartek.apps;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.ipartek.modelo.PerroDAOArrayList;
 import com.ipartek.modelo.PerroDAOSqlite;
 import com.ipartek.modelo.PerroDao;
 import com.ipartek.pojo.Perro;
@@ -16,7 +17,8 @@ public class AppPerrera {
 	// cuando usamos un patron singleton, el constructor es privado
 	// static private PerroDao modelo = new PerroDAOSqlite();
 	// deberemos usar el metodo getInstance();
-	static private PerroDao modelo = PerroDAOSqlite.getInstance();
+	//static private PerroDao modelo = PerroDAOSqlite.getInstance();
+	static private PerroDao modelo = PerroDAOArrayList.getInstance();
 	
 	static private String opcion = ""; // opcion seleccionada en el menu por el usuario
 
