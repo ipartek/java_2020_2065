@@ -39,8 +39,14 @@ public class PerroDAOArrayList implements PerroDao {
 
 	@Override
 	public Perro recuperar(int id) {
-		// TODO hacer un for y buscar por id
-		return null;
+		Perro p = null;
+		for (Perro perro : lista) {
+			if( id == perro.getId()) {
+				p = perro;
+				break;
+			}
+		}
+		return p;
 	}
 
 	@Override
@@ -55,8 +61,28 @@ public class PerroDAOArrayList implements PerroDao {
 
 	@Override
 	public Perro modificar(Perro p) throws Exception {
-		// TODO hacer un for y buscar por id y cambiarlo
-		return null;
+
+		
+		int id = p.getId();
+		
+		Perro pBuscar = recuperar(id);
+		if ( pBuscar == null ) {
+			throw new Exception("No existe perro con id=" + id);
+		}
+		
+		String nombre = p.getNombre();
+		for (Perro perro : lista) {			
+			if ( nombre.equals(perro.getNombre()) && 
+				 id != perro.getId() 
+		     ) {
+				throw new Exception("El nombre ya existe" + nombre);
+			}
+		}
+		
+		eliminar(id);
+		lista.add(p);
+		
+		return p;
 	}
 
 	@Override

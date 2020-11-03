@@ -26,6 +26,7 @@ public class AppPerrera {
 	static final private String OP_LISTAR = "1";
 	static final private String OP_CREAR = "2";
 	static final private String OP_ELIMINAR = "3";
+	static final private String OP_MODIFICAR = "4";
 	static final private String OP_SALIR = "s";
 
 	public static void main(String[] args) {
@@ -46,6 +47,10 @@ public class AppPerrera {
 				crear();
 				break;
 
+			case OP_MODIFICAR:
+				modifcar();
+				break;
+				
 			case OP_ELIMINAR:
 				eliminar();
 				break;
@@ -66,6 +71,48 @@ public class AppPerrera {
 		sc.close();
 
 	}// main
+
+	private static void modifcar() {
+		
+		System.out.println("Dime el ID del perro a modificar");
+		int id = Integer.parseInt(sc.nextLine());		
+		Perro perro = modelo.recuperar(id);
+		
+		if ( perro == null ) {
+			System.out.println("*** Lo sentimos pero no existe perro con id " + id);
+		}else {
+			
+			//pedir datos
+			System.out.println("Escribe el nuevo campo si quieres cambiar o enter para dejarlo como estaba");
+			
+			System.out.printf("nombre[%s] \n", perro.getNombre());
+			String nombre = sc.nextLine();
+			
+			System.out.printf("raza[%s] \n", perro.getRaza());
+			String raza = sc.nextLine();
+			
+			// crear nuevo perro con los datos
+			Perro pModificar = new Perro();
+			pModificar.setId( perro.getId() );
+			pModificar.setNombre( ("".equals(nombre)) ? perro.getNombre(): nombre );
+			pModificar.setRaza( ("".equals(raza)) ? perro.getRaza(): raza );
+			
+			// llamar al modelo
+			try {
+				modelo.modificar(pModificar);
+				
+			}catch (Exception e) {
+
+				e.printStackTrace();
+			}	
+			
+			
+			
+		}
+		
+		
+		
+	}
 
 	private static void eliminar() {
 		
@@ -194,6 +241,7 @@ public class AppPerrera {
 		System.out.println(" " + OP_LISTAR + ".- Listar todos los perros");
 		System.out.println(" " + OP_CREAR + ".- Crear un perro");
 		System.out.println(" " + OP_ELIMINAR + ".- Dar de baja un Perro");
+		System.out.println(" " + OP_MODIFICAR + ".- Editar un Perro");
 		System.out.println(" etc etc ...");
 		System.out.println(" ");
 		System.out.println(" " + OP_SALIR + " - Salir");
