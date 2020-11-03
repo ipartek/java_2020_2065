@@ -2,8 +2,8 @@ package com.ipartek.ejercicios.colecciones;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -47,8 +47,44 @@ public class HashMapEjemplo {
 		HashMap<Integer, Perro> hmPerros = new HashMap<Integer, Perro>();
 		
 		// meter 2 perros
+		Perro p1 = new Perro("bubba", "boxer", 3);
+		p1.setId(12);
 		
-		// recorrer con un Iterator
+		Perro p2 = new Perro("Laika", "setter", 2);
+		p2.setId(50);
+		
+		Perro p3 = new Perro("txispi", "chiguagua", 0.45f);
+		p3.setId(3);
+		
+		
+		hmPerros.put(50, p2);
+		hmPerros.put(12, p1);
+		hmPerros.put(3, p3);
+		
+		
+		// recorrer con un Iterator	
+		ArrayList<Perro> perros = new ArrayList<Perro>(); 
+		for (Iterator<Integer> iterator = hmPerros.keySet().iterator(); iterator.hasNext();) {
+			
+			int key = (Integer) iterator.next();
+			Perro value = hmPerros.get(key);
+			perros.add(value);
+			System.out.printf("La clave %s pertenece al perro %s \n", key, value);
+			
+		}
+		
+        System.out.println("Antes de Ordenar");        
+		for (Perro p : perros) {
+			System.out.printf(" %-10s %s kg \n", p.getNombre(), p.getPeso() );
+		}
+		
+		// para poder ordenar Clases, debemos implementar la interfaz Comparable en la propia clase	
+		Collections.sort(perros);
+		
+		System.out.println("\n Despues de Ordenar");
+		for (Perro p : perros) {
+			System.out.printf(" %-10s %s kg \n", p.getNombre(), p.getPeso() );
+		}
 		
 		
 		
