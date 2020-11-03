@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <interface id="1" language="java" name="com.ipartek.modelo.IDao" project="Ejercicios" 
     file="/Ejercicios/src/com/ipartek/modelo/IDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="123" x="333" y="-14"/>    
+    <position height="-1" width="-1" x="413" y="105"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -46,19 +46,32 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="6">    
+  <interface id="6" language="java" name="com.ipartek.modelo.Singleton" project="Ejercicios" 
+    file="/Ejercicios/src/com/ipartek/modelo/Singleton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="627" y="62"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <generalization id="7">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="8">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
-  <generalization id="7">    
+  <generalization id="9">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
-  <realization id="8">    
+  <realization id="10">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
-  <realization id="9">    
+  <realization id="11">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  

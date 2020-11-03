@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author ur00
  *
  */
-public interface IDao<P> {
+public interface IDao<P> extends Singleton{
 	
 	/**
 	 * lista de pojos
@@ -48,7 +48,6 @@ public interface IDao<P> {
 	 * @return true si elimina, false en caso contrario
 	 */
 	boolean eliminar( int id ) throws Exception;
-	
-	
+
 
 }

@@ -11,7 +11,13 @@ public class AppPerrera {
 
 	// variables globales para esta Clase
 	static private Scanner sc = null;
-	static private PerroDao modelo = new PerroDAOSqlite();
+	
+	
+	// cuando usamos un patron singleton, el constructor es privado
+	// static private PerroDao modelo = new PerroDAOSqlite();
+	// deberemos usar el metodo getInstance();
+	static private PerroDao modelo = PerroDAOSqlite.getInstance();
+	
 	static private String opcion = ""; // opcion seleccionada en el menu por el usuario
 
 	// opciones del menu

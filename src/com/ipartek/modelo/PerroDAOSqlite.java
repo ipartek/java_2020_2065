@@ -11,6 +11,23 @@ import com.ipartek.pojo.Perro;
 public class PerroDAOSqlite implements PerroDao {
 
 	private static final String PATH = "ddbb/perrera.db";
+	private static PerroDAOSqlite INSTANCE = null;
+	
+	// Private constructor suppresses 
+	private PerroDAOSqlite() {
+		super();		
+	}
+	
+	
+	public synchronized static  PerroDAOSqlite getInstance() {
+		if ( INSTANCE == null ) {
+			INSTANCE = new PerroDAOSqlite();
+		}
+		return INSTANCE;
+	}
+		
+
+
 
 	@Override
 	public ArrayList<Perro> listar() {
@@ -146,5 +163,7 @@ public class PerroDAOSqlite implements PerroDao {
 		}
 		return resultado;
 	}
+
+
 
 }

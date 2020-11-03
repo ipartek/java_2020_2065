@@ -1,7 +1,5 @@
 package com.ipartek.sqlite3;
 
-import javax.naming.ldap.LdapName;
-
 import com.ipartek.modelo.PerroDAOSqlite;
 import com.ipartek.pojo.Perro;
 
@@ -10,7 +8,8 @@ public class Ejercicio2 {
 	public static void main(String[] args) throws Exception {
 
 		// Este DAO se encarga de realizara la operaciones de CRUD contra la bbdd
-		PerroDAOSqlite dao = new PerroDAOSqlite();
+		//PerroDAOSqlite dao = new PerroDAOSqlite();
+		PerroDAOSqlite dao = PerroDAOSqlite.getInstance();
 		
 		System.out.println("Ultimo id " + dao.getLastId());
 		
