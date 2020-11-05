@@ -38,6 +38,8 @@ public class PerroDAOSqlite implements PerroDao {
 				PreparedStatement pst = conn.prepareStatement(SQL);
 				ResultSet rs = pst.executeQuery();) {
 
+			System.out.println("***" + pst);
+			
 			while (rs.next()) {
 
 				Perro p = new Perro();
