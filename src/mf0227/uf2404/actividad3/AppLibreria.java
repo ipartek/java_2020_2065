@@ -16,12 +16,12 @@ public class AppLibreria extends AppGestion {
 	private static LibroDao dao = ImplLibroDao.getInstance();
 	private static String opcion = "";
 	private static AppLibreria app = new AppLibreria();
+	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		System.out.println("Empezamos App");
 		
-		try( Scanner sc = new Scanner(System.in) ){
-		
+		try{		
 		
 			do {
 				pintarMenu("Libro");
@@ -56,25 +56,39 @@ public class AppLibreria extends AppGestion {
 			
 			System.out.println("Lo sentimos pero hemos teneido un ERROR.");
 			e.printStackTrace();
+			
+		}finally {
+			sc.close();
 		}
+		
 		System.out.println("Adios, vuelve pronto.....");
 
-	}
+	}// main
 
 	@Override
-	protected void modifcar() {
+	final protected void modifcar() {
 		System.out.println("TODO Modificar");
 		
 	}
 
 	@Override
-	protected void eliminar() {
-		System.out.println("TODO Eliminar");
+	final protected void eliminar() {
+		
+		// pedir el id del libro
+		System.out.println("Dime el ID del libro a eliminar");
+		int id = Integer.parseInt(sc.nextLine());
+				
+		// llamar la modelo
+		if ( dao.delete(id) ) {
+			System.out.println("Libro Eliminado");
+		}else {
+			System.out.println("* No se puede eliminar Libro con ID " + id);
+		}
 		
 	}
 
 	@Override
-	protected void listar() {
+	final protected void listar() {
 		
 		for (Libro l: dao.getAll()) {
 			System.out.printf("[%s] %-35s %4s paginas \n", l.getId(), l.getNombre(), l.getPaginas());
@@ -83,9 +97,28 @@ public class AppLibreria extends AppGestion {
 	}
 
 	@Override
-	protected void crear() {
-		System.out.println("TODO crear");
+	final protected void crear() {
 		
-	}
+		//pedir datos por consola 
+		System.out.println("---- Crear Nuevo Libro ------ ");
+		
+		System.out.println("Nombre:");
+		String nombre = sc.nextLine();
+		
+		System.out.println("Numero de Paginas:");
+		int paginas = Integer.parseInt(sc.nextLine());
+		
+		// crear objeto Libro, el ID no se pide porque se genera al guardar en el modelo
+		Libro l = new Libro( 0 , nombre, paginas);		
+		
+		// llamar al modelo
+		if ( dao.insert(l) ) {
+			System.out.println("Libro creado con Exito, su nuevo id es  " + l.getId());
+		}else {
+			System.out.println("** No se pudo crear Libro, el nombre ya existe " + l.getNombre());
+		}
+		
+		
+	}// crear
 
 }

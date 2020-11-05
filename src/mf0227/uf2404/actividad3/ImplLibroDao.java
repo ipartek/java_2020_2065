@@ -1,10 +1,9 @@
 package mf0227.uf2404.actividad3;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class ImplLibroDao implements LibroDao {
@@ -17,7 +16,7 @@ public class ImplLibroDao implements LibroDao {
 	private ImplLibroDao() {
 		super();
 		hmLibros = new HashMap<Integer, Libro>();
-		hmLibros.put(1, new Libro(1,"Obanboak", 678) );
+		hmLibros.put(1, new Libro(1,"Obaboak", 678) );
 		hmLibros.put(2, new Libro(2,"Gizona berea bakardadean", 234) );
 		hmLibros.put(3, new Libro(3,"Behi euskaldun baten memoriak", 541) );
 		indice = 4;
@@ -36,10 +35,10 @@ public class ImplLibroDao implements LibroDao {
 		ArrayList<Libro> libros = new ArrayList<Libro>(hmLibros.values()); 
 		
 		// ordenacion por defecto que hemos definido en el Libro implements Comparable
-		//Collections.sort(libros);
+		Collections.sort(libros);
 		
 		// ordenacion por paginas que hemos creado una nueva Clase que implements Comparator<Libro>
-		libros.sort(new LibroComparatorPaginas());
+		//libros.sort(new LibroComparatorPaginas());
 		
 		return libros;
 	}
@@ -52,14 +51,38 @@ public class ImplLibroDao implements LibroDao {
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		return ( hmLibros.remove(id) == null ) ? false : true;
 	}
 
 	@Override
 	public boolean insert(Libro l) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		
+		boolean resultado = false;
+		boolean encontrado = false;
+		String nombreLibro = l.getNombre();
+		
+		// buscar si existe el nombre en hashmap, recorriendo uno a uno todos los libros
+		for (Iterator<Libro> iterator = hmLibros.values().iterator(); iterator.hasNext();) {
+			
+			Libro libroIteracion = iterator.next();
+			if ( nombreLibro.equalsIgnoreCase( libroIteracion.getNombre() )) {
+				encontrado = true;
+				break;
+			}
+			
+		} // for
+		
+		
+		// si no existe, insertarlo y actulizar id
+		if ( !encontrado ) {
+			l.setId(indice);                 // setear el id en el objeto
+			hmLibros.put( indice, l );       // guardar objeto en hasmap			
+			indice++;                        // aqctualizar el indice para la sigueinte insercción
+			resultado = true;           
+		}
+		
+		return resultado;
+				
+	} // insert
 
 }
