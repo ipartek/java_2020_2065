@@ -1,12 +1,15 @@
 /* Nuestra hoja de estilos */
 
 
-@import 'reset.css';
+* { 
+    margin: 0;
+    padding: 0;
+}
 
 
 /* varibales globales */
 :root {
-
+    --azul: #003580;
     --blanco: #FFF;
     --negro: #000;
     --marron: peru;
@@ -14,47 +17,75 @@
     --rosa: pink;
 }
 
-/* media para impresoras, tambien se puede declara en el html con un link */
+/* estilos a todas las etiquetas */
 
-@media print {
-
-    body { 
-        font-size: 10pt;
-        color: green;
-    }
-
+body {
+    color: var(--negro);
+    font-size: 1rem; /* 16px */
+    line-height: 1.3rem;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
 }
 
+
+h1 {   
+    text-align: center;
+    text-transform: capitalize;
+    margin: 1rem 0;
+}
+h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+
+header, main, footer {
+    max-width: 1024px;
+    margin: auto; /* centrar el contenido */
+}
 
 header {
-    /* prefijos para dar soporte a diferentes navegadorescontent: 
-
-        -moz- para Firefox y los demás navegadores de Gecko,
-        -webkit- para los navegadores WebKit: Chrome, Safari, etc.
-        -ms- para Microsoft (Internet Explorer),
-        -o- para Presto, el antiguo motor de Opera.
-    
-    */    
-    background-image: -moz-linear-gradient(top, #D7D 0%, #068 100%); 
-    background-image: -o-linear-gradient(top, #D7D 0%, #068 100%);  
-    background-image: -ms-linear-gradient(top, #D7D 0%, #068 100%); 
-    background-image: -webkit-linear-gradient(top, #D7D 0%, #068 100%); 
-    background-image: linear-gradient(top, #D7D 0%, #068 100%);
-    color: var(--blanco);
-
+    background-color: pink;
 }
 
 
-section {
+main {
     background-color: var(--verde);
+    padding: 1rem;
 }
 
 footer {
     background-color: var(--rosa);
 }
 
-h1 {
-    color: var(--negro);
+header nav {
+    background-color: var(--azul);
+    color: #FFF;
+    padding: 10px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+}    
+
+header nav ul li {
+    list-style: none; /* quitar puntito */    
+    width: 100%;
     text-align: center;
-    text-transform: capitalize;
+    padding: 5px 0;
+}   
+
+header nav ul li:hover {
+    background-color: #03A9F4;
+}    
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
