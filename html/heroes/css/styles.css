@@ -26,6 +26,7 @@ body {
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
+    box-sizing: border-box;
 }
 
 
@@ -45,6 +46,7 @@ p {
 
 header, main, footer {
     max-width: 1024px;
+    box-sizing: border-box;  /* si tenemos padding o border lo descuenta del hancho, no los suma */
     margin: auto; /* centrar el contenido */
 }
 
