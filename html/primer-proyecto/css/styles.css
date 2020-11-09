@@ -8,7 +8,7 @@
 :root {
 
     --blanco: #FFF;
-    --negro: #000;
+    --negro: #2f363c;
     --marron: peru;
     --verde: lime;
     --rosa: pink;
@@ -25,6 +25,46 @@
 
 }
 
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    color: var(--negro);
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    /* color: var(--negro); */
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h3, h4 {
+    font-size: 1.8em; 
+}
+
+h5, h6 {
+    font-size: 1.5em; 
+}
+
+
+ /*
+
+p { color: red; }
+p { color: blue; }
+p { color: yellow; }
+
+.destacado { color: pink }
+p.destacado { color: violet }
+#otro { color: purple }
+
+*/
 
 header {
     /* prefijos para dar soporte a diferentes navegadorescontent: 
@@ -53,11 +93,7 @@ footer {
     background-color: var(--rosa);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--negro);
-    text-align: center;
-    text-transform: capitalize;
-}
+
 
 p span {
     font-weight: 600;
