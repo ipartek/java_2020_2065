@@ -9,13 +9,25 @@
 
 /* varibales globales */
 :root {
-    --azul: #003580;
+    --color-primary: #e52326;
+    --color-accent: #E6A622;
     --blanco: #FFF;
-    --negro: #000;
+    --negro: #202020;
     --marron: peru;
     --verde: lime;
     --rosa: pink;
+    --gris-ligth: #f7f7f7;
+    --gris-medium: #6f777b;
+    --gris-dark: #333;
 }
+
+/*
+@font-face {
+    font-family: Roboto;
+    src: url("https://i.annihil.us/u/prod/marvel/font/roboto/Roboto-Regular.ttf") format("truetype")
+}
+*/
+
 
 /* estilos a todas las etiquetas */
 
@@ -29,15 +41,23 @@ body {
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+    color: var(--color-primary);
+}
+
 
 h1 {   
     text-align: center;
     text-transform: capitalize;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    color: var(--blanco);
 }
-h2, h3, h4, h5, h6 {
-    margin: 1rem 0;
+
+h2 {
+    margin: 2rem 0 1.5rem 0;
 }
+
 
 p {
     margin: 1rem 0;
@@ -53,35 +73,46 @@ li {
 }
 
 
-header, main, footer, .container {
+main, .container {
     max-width: 1024px;
     box-sizing: border-box;  /* si tenemos padding o border lo descuenta del hancho, no los suma */
     margin: auto; /* centrar el contenido en horizontal */
 }
 
 header {
-    background-color: pink;
+    background-color: var(--negro);
+    padding: 0.25rem;
 }
 
 
 main {
-    background-color: var(--verde);
+    background-color: var(--gris-ligth); 
     padding: 1rem;
 }
 
 footer {
-    background-color: var(--rosa);
-    padding: 1rem;
+    background-color: var(--gris-ligth);
+    color: var(--gris-medium);
+    border-top: 1px solid var(--gris-medium);
+    padding: 1rem;    
+}
+
+footer .container {
     display: flex;
 }
+
+footer a {
+    color: var(--gris-medium);
+}
+
 
 footer section {
     width: 100%;
 }
 
 nav#header {
-    background-color: var(--azul);
-    color: #FFF;
+    background-color: var(--color-primary);
+    color: var(--blanco);
     padding: 10px;
     position: sticky;
     top: 0;
@@ -106,7 +137,7 @@ nav#header ul li {
 }   
 
 nav#header ul li:hover {
-    background-color: #03A9F4;
+    background-color: var(--color-accent);
 }    
 
 
