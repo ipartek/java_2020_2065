@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posicionamiento</title>    
 </head>
-<body>
+<body id="top">
     <style>
         h1 { color: teal; }
     </style>
@@ -50,7 +50,39 @@
         meter un 'anchor' para que la pulsar suba hasta arriba,
         usar border-radious y box-shadow
     -->
-    <span style="position: fixed; background-color: lime; padding: 10px; bottom: 50px;">FIJO</span>
+    <style>
+        .btn_top {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: orange;      
+            -webkit-box-shadow: -4px 5px 9px 1px rgba(0,0,0,0.49);
+            -moz-box-shadow: -4px 5px 9px 1px rgba(0,0,0,0.49);
+            box-shadow: -4px 5px 9px 1px rgba(0,0,0,0.49);          
+        }
+
+        .btn_top:hover{
+            transition: 1s;
+            background-color: #d66718;
+            -webkit-box-shadow: 1px 1px 17px 8px rgba(0,0,0,0.49);
+            -moz-box-shadow: 1px 1px 17px 8px rgba(0,0,0,0.49);
+            box-shadow: 1px 1px 17px 8px rgba(0,0,0,0.49);        
+        } 
+
+        .btn_top a {
+            color: #FFF;
+            font-size: 4rem;
+            font-weight: 100;
+            text-decoration: none;            
+            padding-left: 11px;
+            font-family: Arial;
+        }
+
+    </style>
+    <span class="btn_top"><a href="#top">^</span>
 
 
     <hr>
