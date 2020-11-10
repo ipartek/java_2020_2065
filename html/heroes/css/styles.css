@@ -52,7 +52,7 @@ a {
 header, main, footer {
     max-width: 1024px;
     box-sizing: border-box;  /* si tenemos padding o border lo descuenta del hancho, no los suma */
-    margin: auto; /* centrar el contenido */
+    margin: auto; /* centrar el contenido en horizontal */
 }
 
 header {
@@ -67,6 +67,7 @@ main {
 
 footer {
     background-color: var(--rosa);
+    display: flex;
 }
 
 header nav {
@@ -80,6 +81,8 @@ header nav a {
 }
 
 header nav ul {
+
+    /* posicionar los LIs en horizontal y dividir el spacio */
     display: flex;
     justify-content: space-between;
 }    
@@ -100,3 +103,5 @@ header nav ul li:hover {
     height: 50px;
     border-radius: 50%;
 }
+
+
