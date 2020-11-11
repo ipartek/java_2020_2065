@@ -1,3 +1,43 @@
-h1 {
-    color: teal;
+
+:root {
+
+    /* 
+     * break point para RWD 
+     * Primero vamos a diseñar para laptop y luego
+     * nos iremos adaptando a los dispositivos mas pequeños 
+    */ 
+    --breakpoint-movil: 425px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-laptop: 1024px;
 }
+
+/*  LAPTOP 1024px
+********************************************/
+
+main {
+    max-width: var(--breakpoint-laptop);
+    margin: auto;
+    background-color: pink;
+}
+
+
+/*  TABLET 768px
+********************************************/
+
+@media (max-width: 768px) {
+
+    main {
+        background-color: darkmagenta;
+    }
+}    
+
+
+/*  MOBILE 425px
+********************************************/
+
+@media (max-width: 425px) {
+
+    main {
+        background-color: darkcyan;
+    }
+} 
