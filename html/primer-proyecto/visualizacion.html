@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizacion</title>
+</head>
+<body>
+    <h1>Visualizacion</h1>
+    <a href="https://uniwebsidad.com/libros/css/capitulo-5/visualizacion" target="_blank" >Documentación de Uniwebsidad</a>
+    <p>Vamos a ver las siguientes propiedades: <b>display</b>, <b>visibility</b>, <b>overflow</b> y <b>z-index</b></p>
+
+    <style>
+        #dv .container {
+            display: flex;
+            padding: 10px;
+            background: pink;
+            
+        }
+        #dv .container div {
+            border: 1px solid grey;
+            width: 50%;
+        }
+
+        .box {
+            display: inline-block;  /* algo hibrido entre block e inline, sirve para poder dar height y width */
+            width: 25%;
+            margin: 10px;
+
+            background-color: orange;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+    </style>
+    <section id="dv">
+        <h2>Display y Visibility</h2>
+        <div class="container">
+            <div>
+                <span class="box">1</span>
+                <span class="box">2</span>
+                <span class="box">3</span>
+                <span class="box">4</span>
+                <span class="box" style="display:none;">5</span>
+                <span class="box">6</span>
+                <span class="box">7</span>
+                <span class="box">8</span>
+                <span class="box">9</span>
+            </div>
+            <div>
+                <span class="box">1</span>
+                <span class="box">2</span>
+                <span class="box">3</span>
+                <span class="box">4</span>
+                <span class="box" style="visibility: hidden;">5</span>
+                <span class="box">6</span>
+                <span class="box">7</span>
+                <span class="box">8</span>
+                <span class="box">9</span>
+            </div>
+        </div>
+
+    </section>
+
+    <style>
+        #ov div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid grey;
+            padding: 10px;
+            background-color: lightblue;
+        }
+
+    </style>
+    <section id="ov">
+        <h2>Overflow</h2>
+
+        <div style="">
+            <h3>Overflow</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime facilis maiores </p>
+        </div>
+        <div style="overflow: hidden;">
+            <h3>Hidden</h3>
+            <p>Odit iure veniam sapiente, incidunt animi in eveniet molestias esse culpa atque, nemo perferendis doloremque, nisi obcaecati assumenda ex perspiciatis hic vel similique ipsum. Ut eligendi possimus ratione facere libero!</p>
+        </div>
+        <div style="overflow: scroll;">
+            <h3>Scroll</h3>
+            <p>Quos minima consequatur quis debitis accusantium autem minus nobis facere, numquam molestias dignissimos totam, beatae voluptatum suscipit, vitae soluta ipsa ratione ut earum blanditiis! Eius aliquam facilis facere cum aspernatur?</p>
+        </div>
+        <div style="overflow-y: scroll;">
+            <h3>Scroll Y</h3>
+            <p>Quos minima consequatur quis debitis accusantium autem minus nobis facere, numquam molestias dignissimos totam, beatae voluptatum suscipit, vitae soluta ipsa ratione ut earum blanditiis! Eius aliquam facilis facere cum aspernatur?</p>
+        </div>
+    </section>
+
+    <style>
+        .caja {            
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 150px;
+
+            background-color: aquamarine;
+            border: 1px solid grey;            
+        }
+
+        .orange {
+            background-color: orange;           
+            left: 100px;
+            top: -120px;
+
+        }
+
+        .green {
+            background-color: green;            
+            top: -230px;
+            left: 10px;
+        }
+
+    </style>
+    <section>
+        <h2>z-index</h2>
+        <p> Jugar a cambiar el z-index desde el inspector de codigo fuente.</p>
+        <div class="caja"></div>
+        <div class="caja orange"></div>
+        <div class="caja green"></div>
+
+    </section>
+
+
+</body>
+</html>
