@@ -6,9 +6,9 @@
 */ 
 :root {
 
-    --breakpoint-movil: 425px;
-    --breakpoint-tablet: 768px;
-    --breakpoint-laptop: 1024px;
+    --breakpoint-xs: 425px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
 
     --color-gris-light: #f1f2f3;
     --color-gris: #b6c8ca;
@@ -50,7 +50,7 @@ h1, h2 {
 ********************************************/
 
 header, main, footer {
-    max-width: var(--breakpoint-laptop);
+    max-width: var(--breakpoint-lg);
     margin: auto;
    /* background-color: pink; */
 }
@@ -80,6 +80,8 @@ header .menu-right ul {
     width: 50px;
     border-radius: 50%;
     background-color: var(--color-gris);
+    position: relative;
+    top: 15px;
 }
 
 
@@ -94,23 +96,55 @@ main article {
     
 }
 
+#btn-top {
+    display: none;
+    background-color: var(--color-azul);
+}
+
+
+
 /*  TABLET 768px
 ********************************************/
 
 @media (max-width: 768px) {
 
-    main {
-        background-color: darkmagenta;
+    main {        
+        flex-wrap: wrap; /* si no entra salta  a linea de abajo */
     }
-}    
 
+    main article {
+        width: 48%;        
+        margin-bottom: 2rem;
+    }    
+
+}    
 
 /*  MOBILE 425px
 ********************************************/
 
-@media (max-width: 425px) {
+@media ( max-width: 425px  ) {
 
-    main {
-        background-color: darkcyan;
+    main article {
+        width: 100%; 
+    }   
+    
+    
+    #btn-top {
+        display: inline;     
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
     }
+
+} 
+
+@media (max-width: 425px) and (orientation: landscape)  {
+
+    body {
+        background-color: yellow;
+    }
+
+    main article {
+        width: 40%; 
+    }    
 } 
